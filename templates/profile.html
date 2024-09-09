@@ -1,0 +1,17 @@
+<div class="fixed-top">
+	{% extends 'baseform.html' %}
+</div>
+{% block title %} Edit Profile {% endblock %}
+
+{% block header %} Edit your profile {% endblock %}
+
+{% block content %}
+{% csrf_token %}
+{% for field in form %}
+<div class="input-group">
+    {{field.label_tag}}
+    {{field}}
+</div>
+{% endfor %}
+<button type="submit">Save Changes</button>
+{% endblock %}
